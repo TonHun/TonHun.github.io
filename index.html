@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>迷你挖掘机买卖 | 专业小型工程机械交易平台</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1E40AF', // 深蓝色主色调
+            secondary: '#F97316', // 橙色强调色
+            neutral: {
+              100: '#F3F4F6',
+              200: '#E5E7EB',
+              300: '#D1D5DB',
+              700: '#374151',
+              800: '#1F2937',
+              900: '#111827'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .hover-lift:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+    }
+  </style>
+</head>
+<body class="font-sans text-neutral-800 bg-neutral-100">
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 shadow-md">
+    <div class="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
+      <a href="#" class="flex items-center space-x-2">
+        <i class="fa fa-excavator text-primary text-3xl"></i>
+        <span class="text-xl md:text-2xl font-bold text-primary">迷你挖掘机交易</span>
+      </a>
+      
+      <!-- 桌面导航 -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="font-medium hover:text-primary transition-colors">首页</a>
+        <a href="#products" class="font-medium hover:text-primary transition-colors">产品展示</a>
+        <a href="#about" class="font-medium hover:text-primary transition-colors">关于我们</a>
+        <a href="#contact" class="font-medium hover:text-primary transition-colors">联系方式</a>
+        <a href="#contact" class="bg-secondary hover:bg-secondary/90 text-white px-5 py-2 rounded-md transition-colors">立即咨询</a>
+      </nav>
+      
+      <!-- 移动端菜单按钮 -->
+      <button id="menu-toggle" class="md:hidden text-neutral-800 focus:outline-none">
+        <i class="fa fa-bars text-2xl"></i>
+      </button>
+    </div>
+    
+    <!-- 移动端导航菜单 -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+      <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+        <a href="#home" class="py-2 font-medium hover:text-primary transition-colors">首页</a>
+        <a href="#products" class="py-2 font-medium hover:text-primary transition-colors">产品展示</a>
+        <a href="#about" class="py-2 font-medium hover:text-primary transition-colors">关于我们</a>
+        <a href="#contact" class="py-2 font-medium hover:text-primary transition-colors">联系方式</a>
+        <a href="#contact" class="bg-secondary hover:bg-secondary/90 text-white px-5 py-2 rounded-md text-center transition-colors">立即咨询</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 英雄区域 -->
+  <section id="home" class="pt-24 md:pt-0 min-h-screen flex items-center relative bg-gradient-to-br from-primary/90 to-primary overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <img src="https://picsum.photos/id/1025/1920/1080" alt="背景" class="w-full h-full object-cover">
+    </div>
+    <div class="container mx-auto px-4 py-20 md:py-32 relative z-10">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="text-white">
+          <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-shadow mb-6">
+            专业迷你挖掘机<br>买卖交易平台
+          </h1>
+          <p class="text-lg md:text-xl mb-8 text-white/90 max-w-lg">
+            提供各类优质迷你挖掘机，满足小型工程、农业、园林等多场景需求，专业团队为您提供买卖咨询与服务。
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#products" class="bg-secondary hover:bg-secondary/90 text-white px-8 py-3 rounded-md font-medium text-center transition-all transform hover:scale-105">
+              浏览产品
+            </a>
+            <a href="#contact" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/40 px-8 py-3 rounded-md font-medium text-center transition-all">
+              联系我们
+            </a>
+          </div>
+          
+          <div class="mt-12 flex items-center space-x-6">
+            <div class="flex items-center">
+              <i class="fa fa-check-circle text-secondary mr-2"></i>
+              <span>质量保证</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fa fa-check-circle text-secondary mr-2"></i>
+              <span>价格公道</span>
+            </div>
+            <div class="flex items-center">
+              <i class="fa fa-check-circle text-secondary mr-2"></i>
+              <span>售后完善</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hidden md:block">
+          <div class="relative">
+            <img src="https://picsum.photos/id/1040/600/400" alt="迷你挖掘机" class="rounded-lg shadow-2xl w-full object-cover hover-lift">
+            <div class="absolute -bottom-5 -left-5 bg-white p-4 rounded-lg shadow-lg">
+              <div class="flex items-center space-x-2">
+                <i class="fa fa-phone text-primary text-xl"></i>
+                <span class="font-bold">15690876789</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+      <a href="#products" class="flex flex-col items-center">
+        <span class="mb-2">了解更多</span>
+        <i class="fa fa-chevron-down"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- 产品展示 -->
+  <section id="products" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-neutral-800 mb-4">热门迷你挖掘机</h2>
+        <p class="text-neutral-600 max-w-2xl mx-auto">我们提供多种型号的迷你挖掘机，适用于不同场景需求，所有设备均经过严格检测，确保性能良好</p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 产品1 -->
+        <div class="bg-neutral-100 rounded-xl overflow-hidden shadow-md hover-lift">
+          <div class="h-56 overflow-hidden">
+            <img src="https://picsum.photos/id/1042/600/400" alt="小型挖掘机1" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl font-bold text-neutral-800">1吨迷你挖掘机</h3>
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">畅销款</span>
+            </div>
+            <p class="text-neutral-600 mb-4">适用于小型工程、园林建设，灵活高效，操作简单</p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-secondary">¥32,000</span>
+              <a href="#contact" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                咨询详情 <i class="fa fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 产品2 -->
+        <div class="bg-neutral-100 rounded-xl overflow-hidden shadow-md hover-lift">
+          <div class="h-56 overflow-hidden">
+            <img src="https://picsum.photos/id/1043/600/400" alt="小型挖掘机2" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl font-bold text-neutral-800">2吨多功能挖掘机</h3>
+              <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">新品</span>
+            </div>
+            <p class="text-neutral-600 mb-4">配备多种工具，适合农业、市政工程，动力强劲</p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-secondary">¥58,000</span>
+              <a href="#contact" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                咨询详情 <i class="fa fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 产品3 -->
+        <div class="bg-neutral-100 rounded-xl overflow-hidden shadow-md hover-lift">
+          <div class="h-56 overflow-hidden">
+            <img src="https://picsum.photos/id/1044/600/400" alt="小型挖掘机3" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl font-bold text-neutral-800">3吨履带式挖掘机</h3>
+              <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">促销</span>
+            </div>
+            <p class="text-neutral-600 mb-4">履带设计，适合复杂地形，稳定性好，作业范围广</p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-secondary">¥86,000</span>
+              <a href="#contact" class="text-primary hover:text-primary/80 font-medium flex items-center">
+                咨询详情 <i class="fa fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="#contact" class="inline-block bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-md font-medium transition-all transform hover:scale-105">
+          查看全部产品
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 服务优势 -->
+  <section class="py-20 bg-neutral-100">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-neutral-800 mb-4">我们的服务优势</h2>
+        <p class="text-neutral-600 max-w-2xl mx-auto">多年行业经验，为您提供专业的迷你挖掘机买卖解决方案</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-sm hover-lift">
+          <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+            <i class="fa fa-check-circle text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">质量保证</h3>
+          <p class="text-neutral-600">所有设备均经过严格检测，确保性能良好，提供质量保修</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-sm hover-lift">
+          <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+            <i class="fa fa-money text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">价格公道</h3>
+          <p class="text-neutral-600">直接对接厂商，无中间商赚差价，提供合理透明的价格体系</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-sm hover-lift">
+          <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+            <i class="fa fa-truck text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">配送便捷</h3>
+          <p class="text-neutral-600">全国配送服务，专业物流团队，确保设备安全准时送达</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-sm hover-lift">
+          <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
+            <i class="fa fa-headphones text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">售后完善</h3>
+          <p class="text-neutral-600">专业技术团队提供售后支持，操作培训和维修保养服务</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于我们 -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-neutral-800 mb-6">关于我们</h2>
+          <p class="text-neutral-600 mb-4">我们是专业的迷你挖掘机买卖平台，拥有多年行业经验，致力于为客户提供高品质的小型工程机械及完善的售后服务。</p>
+          <p class="text-neutral-600 mb-6">我们的产品广泛应用于市政工程、农业种植、园林绿化、小型建筑施工等领域，凭借可靠的质量和合理的价格赢得了广大客户的信赖。</p>
+          
+          <div class="grid grid-cols-2 gap-6 mb-8">
+            <div>
+              <div class="text-3xl font-bold text-primary mb-1">10+</div>
+              <div class="text-neutral-600">行业经验</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-primary mb-1">500+</div>
+              <div class="text-neutral-600">合作客户</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-primary mb-1">30+</div>
+              <div class="text-neutral-600">产品型号</div>
+              </div>
+            <div>
+              <div class="text-3xl font-bold text-primary mb-1">24/7</div>
+              <div class="text-neutral-600">服务支持</div>
+            </div>
+          </div>
+          
+          <a href="#contact" class="inline-block bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md font-medium transition-all">
+            联系我们了解更多
+          </a>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <img src="https://picsum.photos/id/1041/400/300" alt="公司图片1" class="rounded-lg shadow-md hover-lift">
+            <img src="https://picsum.photos/id/1045/400/500" alt="公司图片2" class="rounded-lg shadow-md hover-lift">
+          </div>
+          <div class="space-y-4 pt-8">
+            <img src="https://picsum.photos/id/1046/400/500" alt="公司图片3" class="rounded-lg shadow-md hover-lift">
+            <img src="https://picsum.photos/id/1047/400/300" alt="公司图片4" class="rounded-lg shadow-md hover-lift">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系我们 -->
+  <section id="contact" class="py-20 bg-neutral-100">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-neutral-800 mb-4">联系我们</h2>
+        <p class="text-neutral-600 max-w-2xl mx-auto">无论您有任何疑问或需求，欢迎通过以下方式联系我们，我们将尽快为您提供专业服务</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <h3 class="text-2xl font-bold mb-6">联系方式</h3>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                <i class="fa fa-envelope text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-1">邮箱</h4>
+                <p class="text-neutral-600">tonhun@126.com</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                <i class="fa fa-phone text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-1">电话</h4>
+                <p class="text-neutral-600">15690876789</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                <i class="fa fa-map-marker text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-1">地址</h4>
+                <p class="text-neutral-600">上海市广兰路129号3号楼1605</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                <i class="fa fa-clock-o text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-1">营业时间</h4>
+                <p class="text-neutral-600">周一至周五: 9:00 - 18:00</p>
+                <p class="text-neutral-600">周六: 9:00 - 15:00 (节假日除外)</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <h4 class="font-bold text-lg mb-4">关注我们</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 bg-primary/10 hover:bg-primary hover:text-white text-primary rounded-full flex items-center justify-center transition-colors">
+                <i class="fa fa-weixin"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-primary/10 hover:bg-primary hover:text-white text-primary rounded-full flex items-center justify-center transition-colors">
+                <i class="fa fa-weibo"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-primary/10 hover:bg-primary hover:text-white text-primary rounded-full flex items-center justify-center transition-colors">
+                <i class="fa fa-qq"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <h3 class="text-2xl font-bold mb-6">发送咨询</h3>
+          
+          <form>
+            <div class="mb-4">
+              <label for="name" class="block text-neutral-700 mb-2">姓名</label>
+              <input type="text" id="name" class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="请输入您的姓名">
+            </div>
+            
+            <div class="mb-4">
+              <label for="phone" class="block text-neutral-700 mb-2">电话</label>
+              <input type="tel" id="phone" class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="请输入您的联系电话">
+            </div>
+            
+            <div class="mb-4">
+              <label for="email" class="block text-neutral-700 mb-2">邮箱</label>
+              <input type="email" id="email" class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="请输入您的邮箱地址">
+            </div>
+            
+            <div class="mb-6">
+              <label for="message" class="block text-neutral-700 mb-2">咨询内容</label>
+              <textarea id="message" rows="4" class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="请输入您的咨询内容"></textarea>
+            </div>
+            
+            <button type="submit" class="w-full bg-secondary hover:bg-secondary/90 text-white px-6 py-3 rounded-md font-medium transition-colors">
+              提交咨询
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="bg-neutral-800 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <i class="fa fa-excavator text-secondary text-2xl"></i>
+            <span class="text-xl font-bold">迷你挖掘机交易</span>
+          </div>
+          <p class="text-neutral-400 mb-4">专业的迷你挖掘机买卖平台，为您提供优质设备和完善服务</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-neutral-400 hover:text-secondary transition-colors">
+              <i class="fa fa-weixin"></i>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-secondary transition-colors">
+              <i class="fa fa-weibo"></i>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-secondary transition-colors">
+              <i class="fa fa-qq"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-bold mb-4">快速链接</h4>
+          <ul class="space-y-2">
+            <li><a href="#home" class="text-neutral-400 hover:text-white transition-colors">首页</a></li>
+            <li><a href="#products" class="text-neutral-400 hover:text-white transition-colors">产品展示</a></li>
+            <li><a href="#about" class="text-neutral-400 hover:text-white transition-colors">关于我们</a></li>
+            <li><a href="#contact" class="text-neutral-400 hover:text-white transition-colors">联系方式</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-bold mb-4">产品分类</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">1吨迷你挖掘机</a></li>
+            <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">2吨多功能挖掘机</a></li>
+            <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">3吨履带式挖掘机</a></li>
+            <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">挖掘机配件</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-bold mb-4">联系信息</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <i class="fa fa-envelope text-secondary mr-2"></i>
+              <span class="text-neutral-400">tonhun@126.com</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-phone text-secondary mr-2"></i>
+              <span class="text-neutral-400">15690876789</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-map-marker text-secondary mr-2 mt-1"></i>
+              <span class="text-neutral-400">上海市广兰路129号3号楼1605</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-neutral-700 pt-8 text-center text-neutral-500">
+        <p>&copy; 2023 迷你挖掘机交易平台 版权所有</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 返回顶部按钮 -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
+    <i class="fa fa-chevron-up"></i>
+  </button>
+
+  <script>
+    // 移动端菜单切换
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // 导航栏滚动效果
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        navbar.classList.add('py-2');
+        navbar.classList.remove('py-3', 'md:py-4');
+        navbar.classList.add('shadow-lg');
+      } else {
+        navbar.classList.remove('py-2');
+        navbar.classList.add('py-3', 'md:py-4');
+        navbar.classList.remove('shadow-lg');
+      }
+    });
+    
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        // 关闭移动端菜单
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // 返回顶部按钮
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+        backToTopButton.classList.add('opacity-100', 'visible');
+      } else {
+        backToTopButton.classList.add('opacity-0', 'invisible');
+        backToTopButton.classList.remove('opacity-100', 'visible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // 表单提交
+    const form = document.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('咨询已提交，我们将尽快与您联系！');
+        form.reset();
+      });
+    }
+  </script>
+</body>
+</html>
